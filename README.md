@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/mak-it/bin_packing.png)](http://travis-ci.org/mak-it/bin_packing)
+
 # Bin-packing
 
 A library for placing 2D rectangles (box-es) in one or multiple rectangular areas (bins) with reasonable area allocation efficiency. Rectangles may be rotated by 90 degrees.
