@@ -34,19 +34,18 @@
     </style>
   </head>
   <body>
-    <div class="bins">%{bins}</div>
+    <div>
+      <% bins.each do |bin| %>
+        <div class="bin" style="width: <%= zoom(bin.width) %>px; height: <%= zoom(bin.height) %>px;">
+          <div>
+            <% bin.boxes.each do |box| %>
+              <div class="box" style="width: <%= zoom(box.width) %>px; height: <%= zoom(box.height) %>px; left: <%= zoom(box.x) %>px; top: <%= zoom(box.y) %>px;">
+                <span class="box-label"><%= box.label %></span>
+              </div>
+            <% end %>
+          </div>
+          <span class="label"><%= bin.label %></span>
+        </div>
+      <% end %>
   </body>
 </html>
-
-<bin>
-  <div class="bin" style="width: %{width}px; height: %{height}px;">
-    <div class="boxes">%{boxes}</div>
-    <span class="label">%{label}</span>
-  </div>
-</bin>
-
-<box>
-  <div class="box" style="width: %{width}px; height: %{height}px; left: %{x}px; top: %{y}px;">
-    <span class="box-label">%{label}</span>
-  </div>
-</box>

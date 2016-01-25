@@ -11,6 +11,7 @@ require 'bin_packing/heuristics/best_long_side_fit'
 require 'bin_packing/heuristics/best_short_side_fit'
 require 'bin_packing/heuristics/bottom_left'
 require 'bin_packing/packer'
+require 'bin_packing/export_binding'
 require 'bin_packing/export'
 require 'bin_packing/version'
 
