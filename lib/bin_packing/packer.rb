@@ -5,12 +5,12 @@ module BinPacking
       @unpacked_boxes = []
     end
 
-    def pack(boxes, limit: nil)
+    def pack(boxes, options = {})
       packed_boxes = []
       boxes = boxes.reject(&:packed?)
       return packed_boxes if boxes.none?
 
-      limit ||= BinPacking::Score::MAX_INT
+      limit = options[:limit] || BinPacking::Score::MAX_INT
       board = BinPacking::ScoreBoard.new(@bins, boxes)
       while entry = board.best_fit
         entry.bin.insert!(entry.box)
