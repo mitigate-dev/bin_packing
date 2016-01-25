@@ -1,7 +1,7 @@
 module BinPacking
   class Export
     def initialize(*bins)
-      @bins = Array(bins)
+      @bins = Array(bins).flatten
     end
 
     def to_html(options = {})
