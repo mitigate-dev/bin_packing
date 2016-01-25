@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .bin {
+        position: relative;
+        margin: 20px;
+        background: #eee;
+      }
+
+      .bin .label {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+      }
+
+      .box {
+        position: absolute;
+        border: 1px solid white;
+        background: #0a0;
+        box-sizing: border-box;
+      }
+
+      .box .box-label {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bins">%{bins}</div>
+  </body>
+</html>
+
+<bin>
+  <div class="bin" style="width: %{width}px; height: %{height}px;">
+    <div class="boxes">%{boxes}</div>
+    <span class="label">%{label}</span>
+  </div>
+</bin>
+
+<box>
+  <div class="box" style="width: %{width}px; height: %{height}px; left: %{x}px; top: %{y}px;">
+    <span class="box-label">%{label}</span>
+  </div>
+</box>

@@ -1,3 +1,4 @@
+require 'bin_packing/error'
 require 'bin_packing/box'
 require 'bin_packing/free_space_box'
 require 'bin_packing/bin'

@@ -8,8 +8,8 @@ Provides algorithm for placing rectangles (box-es) in one or multiple rectangula
 TXT
   s.authors = ['MAK IT']
   s.email = 'info@makit.lv'
-  s.files = Dir['lib/**/*.rb']
+  s.files = Dir['lib/**/*.rb'] + Dir['lib/bin_packing/resources/*']
   s.homepage = 'http://rubygems.org/gems/bin-packing'
   s.license = 'MIT'
-  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rspec', '~> 3.0', '>= 3.0.0'
 end

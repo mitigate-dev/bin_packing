@@ -21,6 +21,8 @@ and run `bundle install` from your shell.
 
 Add boxes to bin in given order:
 ```ruby
+require 'bin_packing'
+
 bin = BinPacking::Bin.new(100, 50)
 boxes = [
   BinPacking::Box.new(50, 50),
@@ -28,9 +30,11 @@ boxes = [
   BinPacking::Box.new(50, 44)
 ]
 remaining_boxes = []
+
 boxes.each do |box|
   remaining_boxes << box unless bin.insert(box)
 end
+
 bin.boxes.size
 => 2
 bin.boxes[1].x
@@ -55,8 +59,10 @@ boxes = [
   BinPacking::Box.new(40, 40),
   BinPacking::Box.new(200, 200) # Too large to fit
 ]
+
 packer = BinPacking::Packer.new([bin_1, bin_2])
 packed_boxes = packer.pack(boxes)
+
 packed_boxes.size
 => 3
 bin_1.boxes.size
@@ -122,3 +128,18 @@ bin.record.id
 bin.boxes.first.color
 => 'silver'
 ```
+
+Export results to HTML:
+```ruby
+bin_1 = BinPacking::Bin.new(1500, 1000)
+bin_2 = BinPacking::Bin.new(500, 200)
+bin_1.insert!(BinPacking::Box.new(950, 950))
+bin_1.insert!(BinPacking::Box.new(500, 500))
+bin_1.insert!(BinPacking::Box.new(200, 500))
+bin_1.insert!(BinPacking::Box.new(250, 300))
+
+html = BinPacking::Export.new(bin_1, bin_2).to_html(zoom: 0.5)
+
+File.write('my/path.html', html)
+```
+![Exported html example](https://github.com/mak-it/bin-packing/raw/master/images/export_example.png "Exported html example")
