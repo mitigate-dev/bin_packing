@@ -7,12 +7,12 @@ This is [Maximal Rectangles Algorithm](http://clb.demon.fi/files/RectangleBinPac
 ## Install
 
 ```shell
-gem install bin-packing
+gem install bin_packing
 ```
 or add the following line to Gemfile:
 
 ```ruby
-gem 'bin-packing'
+gem 'bin_packing'
 ```
 and run `bundle install` from your shell.
 
@@ -142,4 +142,4 @@ html = BinPacking::Export.new(bin_1, bin_2).to_html(zoom: 0.5)
 
 File.write('my/path.html', html)
 ```
-![Exported html example](https://github.com/mak-it/bin-packing/raw/master/images/export_example.png "Exported html example")
+![Exported html example](https://github.com/mak-it/bin_packing/raw/master/images/export_example.png "Exported html example")
