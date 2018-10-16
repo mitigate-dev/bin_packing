@@ -112,6 +112,24 @@ describe BinPacking::Packer do
       expect(packer.pack([box]).size).to be 1
       expect(packer.pack([box]).size).to be 0
     end
+
+    it 'respects the can_rotate property' do
+      bin = bin_of_size_1
+      box = BinPacking::Box.new(1_000, 9_000, can_rotate: false)
+      packer = BinPacking::Packer.new([bin])
+      expect(packer.pack([box]).size).to be 0
+      expect(bin.boxes.size).to be 0
+      expect(box.width).to be 1_000
+      expect(box.height).to be 9_000
+      expect(box.packed?).to be false
+
+      bin = bin_of_size_1
+      box = BinPacking::Box.new(1_000, 9_000, can_rotate: true)
+      packer = BinPacking::Packer.new([bin])
+      expect(packer.pack([box]).size).to be 1
+      expect(bin.boxes.size).to be 1
+      expect(box.packed?).to be true
+    end
   end
 
   describe '#pack!' do
