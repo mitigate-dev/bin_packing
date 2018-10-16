@@ -15,10 +15,6 @@ module BinPacking
       @area ||= @width * @height
     end
 
-    def rotate
-      @width, @height = [@height, @width]
-    end
-
     def packed?
       @packed
     end
