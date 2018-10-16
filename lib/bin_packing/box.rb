@@ -2,13 +2,13 @@ module BinPacking
   class Box
     attr_accessor :width, :height, :x, :y, :packed, :can_rotate
 
-    def initialize(width, height, can_rotate: true)
+    def initialize(width, height)
       @width = width
       @height = height
       @x = 0
       @y = 0
       @packed = false
-      @can_rotate = can_rotate
+      @can_rotate = true
     end
 
     def area

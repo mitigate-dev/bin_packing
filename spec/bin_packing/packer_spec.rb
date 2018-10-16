@@ -115,7 +115,8 @@ describe BinPacking::Packer do
 
     it 'respects the can_rotate property' do
       bin = bin_of_size_1
-      box = BinPacking::Box.new(1_000, 9_000, can_rotate: false)
+      box = BinPacking::Box.new(1_000, 9_000)
+      box.can_rotate = false
       packer = BinPacking::Packer.new([bin])
       expect(packer.pack([box]).size).to be 0
       expect(bin.boxes.size).to be 0
@@ -124,7 +125,8 @@ describe BinPacking::Packer do
       expect(box.packed?).to be false
 
       bin = bin_of_size_1
-      box = BinPacking::Box.new(1_000, 9_000, can_rotate: true)
+      box = BinPacking::Box.new(1_000, 9_000)
+      box.can_rotate = true
       packer = BinPacking::Packer.new([bin])
       expect(packer.pack([box]).size).to be 1
       expect(bin.boxes.size).to be 1
