@@ -6,5 +6,7 @@ rvm:
   - 1.9.3
   - 2.2.0
   - jruby-19mode
-  - rbx-2
+  - 2.4
+  - 2.5
+
 script: bundle exec rspec spec
