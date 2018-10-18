@@ -8,7 +8,10 @@ module BinPacking
 
         free_rectangles.each do |free_rect|
           try_place_rect_in(free_rect, box, width, height, best_score)
-          try_place_rect_in(free_rect, box, height, width, best_score)
+
+          if box.can_rotate?
+            try_place_rect_in(free_rect, box, height, width, best_score)
+          end
         end
 
         best_score

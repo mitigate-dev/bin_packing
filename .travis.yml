@@ -3,7 +3,9 @@ before_install:
   - rm Gemfile.lock
 rvm:
   - 1.9.3
-  - 2.2.0
+  - 2.2
+  - 2.3
+  - 2.4
+  - 2.5
   - jruby-19mode
-  - rbx-2
 script: bundle exec rspec spec

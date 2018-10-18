@@ -1,6 +1,6 @@
 module BinPacking
   class Box
-    attr_accessor :width, :height, :x, :y, :packed
+    attr_accessor :width, :height, :x, :y, :packed, :can_rotate
 
     def initialize(width, height)
       @width = width
@@ -8,18 +8,19 @@ module BinPacking
       @x = 0
       @y = 0
       @packed = false
+      @can_rotate = true
     end
 
     def area
       @area ||= @width * @height
     end
 
-    def rotate
-      @width, @height = [@height, @width]
-    end
-
     def packed?
       @packed
+    end
+
+    def can_rotate?
+      @can_rotate
     end
 
     def label
