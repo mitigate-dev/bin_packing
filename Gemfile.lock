@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bin_packing (0.0.1)
+    bin_packing (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -27,3 +27,6 @@ PLATFORMS
 DEPENDENCIES
   bin_packing!
   rspec (~> 3.0, >= 3.0.0)
+
+BUNDLED WITH
+   1.16.6
