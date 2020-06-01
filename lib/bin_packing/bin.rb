@@ -25,6 +25,18 @@ module BinPacking
       @heuristic.find_position_for_new_node!(box, @free_rectangles)
       return false unless box.packed?
 
+      insert_in_known_position(box)
+    end
+
+    def insert!(box)
+      unless insert(box)
+        raise ArgumentError, "Could not insert box #{box.inspect} "\
+                             "into bin #{inspect}."
+      end
+      self
+    end
+
+    def insert_in_known_position(box)
       num_rectangles_to_process = @free_rectangles.size
       i = 0
       while i < num_rectangles_to_process
@@ -40,14 +52,6 @@ module BinPacking
 
       @boxes << box
       true
-    end
-
-    def insert!(box)
-      unless insert(box)
-        raise ArgumentError, "Could not insert box #{box.inspect} "\
-                             "into bin #{inspect}."
-      end
-      self
     end
 
     def score_for(box)
