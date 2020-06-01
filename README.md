@@ -93,6 +93,18 @@ Following heuristics are available:
 * BestShortSideFit - least remaining side length (best of both dimensions is more important) - __default__
 * BottomLeft - most tallest box is taken
 
+Add boxes with specific, previously known location:
+
+```ruby
+bin = BinPacking::Bin.new(100, 50)
+
+box = BinPacking::Box.new(40, 40)
+box.x = 20
+box.y = 10
+
+bin.insert_in_known_position(box)
+```
+
 Add custom data to bins and boxes using inheritance:
 ```ruby
 class Record
