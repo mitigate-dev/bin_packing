@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bin_packing (0.1.0)
+    bin_packing (0.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -29,4 +29,4 @@ DEPENDENCIES
   rspec (~> 3.0, >= 3.0.0)
 
 BUNDLED WITH
-   1.16.6
+   1.17.3
