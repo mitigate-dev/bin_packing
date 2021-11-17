@@ -1,5 +1,7 @@
 module BinPacking
   class Bin
+    extend Collection
+
     attr_reader :width, :height, :boxes, :heuristic
 
     def initialize(width, height, heuristic = nil)

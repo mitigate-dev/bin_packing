@@ -1,5 +1,7 @@
 module BinPacking
   class Box
+    extend Collection
+
     attr_accessor :width, :height, :x, :y, :packed, :can_rotate
 
     def initialize(width, height)
