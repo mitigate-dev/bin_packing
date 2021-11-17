@@ -14,7 +14,7 @@ module BinPacking
     end
 
     def area
-      @area ||= @width * @height
+      width * height
     end
 
     def packed?
