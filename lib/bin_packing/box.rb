@@ -2,7 +2,7 @@ module BinPacking
   class Box
     extend Collection
 
-    attr_accessor :width, :height, :x, :y, :packed, :can_rotate
+    attr_accessor :name, :width, :height, :x, :y, :packed, :can_rotate
 
     def initialize(width, height)
       @width = width
@@ -26,7 +26,7 @@ module BinPacking
     end
 
     def label
-      "#{@width}x#{@height} at [#{@x},#{@y}]"
+      "#{name} #{width}x#{height} at [#{x},#{y}]"
     end
   end
 end

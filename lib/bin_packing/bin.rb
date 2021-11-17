@@ -2,7 +2,7 @@ module BinPacking
   class Bin
     extend Collection
 
-    attr_reader :width, :height, :boxes, :heuristic
+    attr_accessor :name, :width, :height, :boxes, :heuristic
 
     def initialize(width, height, heuristic = nil)
       @width = width
@@ -66,7 +66,7 @@ module BinPacking
     end
 
     def label
-      "#{@width}x#{@height} #{efficiency}%"
+      "#{name} #{width}x#{height} (#{efficiency}% full - #{boxes.size} boxes)"
     end
 
     private
